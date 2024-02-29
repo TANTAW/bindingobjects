@@ -37,6 +37,14 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    // when their is a conflict of jvm target 1.8 and in another location 17 we us kotlin compile to unify jvmTarget
+    tasks{
+        withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>{
+            kotlinOptions {
+                jvmTarget = "1.8"
+            }
+        }
+    }
 }
 
 dependencies {
